@@ -1,0 +1,15 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+    <div >
+        <a class="gallery" href={{product.gal1}}><img src={{product.gal1}} width=70> </a>
+        <a class="gallery" href={{product.gal2}}><img src={{product.gal2}} width=70> </a>
+        <a class="gallery" href={{product.gal3}}><img src={{product.gal3}} width=70> </a>
+      </div>
+      <h3>{{ product.name }}</h3>
+      <h4>{{ product.price | currency }}</h4>
+      <p>{{ product.description }}</p>
+    
+      <button (click)="addToCart(product)">Buy</button>
+</div>
+<like-box></like-box>
