@@ -13,12 +13,6 @@ import { CartComponent } from './cart/cart.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 import { CategoryComponent } from './category/category.component';
-import { ProductList2Component } from './product-list2/product-list2.component';
-import { ProductList3Component } from './product-list3/product-list3.component';
-import { ProductList4Component } from './product-list4/product-list4.component';
-import { ProductDetails2Component } from './product-details2/product-details2.component';
-import { ProductDetails3Component } from './product-details3/product-details3.component';
-import { ProductDetails4Component } from './product-details4/product-details4.component';
 import { LikeComponent } from './like/like.component';
 
 @NgModule({
@@ -28,16 +22,17 @@ import { LikeComponent } from './like/like.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: CategoryComponent },
+      { path: 'categories/:categoryName', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
-      { path: 'product-list', component: ProductListComponent },
-      { path: 'product-list2', component: ProductList2Component },
-      { path: 'product-list3', component: ProductList3Component },
-      { path: 'product-list4', component: ProductList4Component },
-      { path: 'products2/:productId', component: ProductDetails2Component },
-      { path: 'products3/:productId', component: ProductDetails3Component },
-      { path: 'products4/:productId', component: ProductDetails4Component },
+
+      // { path: 'product-list2', component: ProductList2Component },
+      // { path: 'product-list3', component: ProductList3Component },
+      // { path: 'product-list4', component: ProductList4Component },
+      // { path: 'products2/:productId', component: ProductDetails2Component },
+      // { path: 'products3/:productId', component: ProductDetails3Component },
+      // { path: 'products4/:productId', component: ProductDetails4Component },
     ])
   ],
   declarations: [
@@ -49,12 +44,6 @@ import { LikeComponent } from './like/like.component';
     CartComponent,
     ShippingComponent,
     CategoryComponent,
-    ProductList2Component,
-    ProductList3Component,
-    ProductList4Component,
-    ProductDetails2Component,
-    ProductDetails3Component,
-    ProductDetails4Component,
     LikeComponent,
   ],
   bootstrap: [
