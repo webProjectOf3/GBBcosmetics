@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 import { CategoryComponent } from './category/category.component';
 import { LikeComponent } from './like/like.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { LikeComponent } from './like/like.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: CategoryComponent },
+      { path: '', component: HomeComponent },
+      { path: 'categories', component: CategoryComponent },
+      { path: 'about', component: AboutComponent },
       { path: 'categories/:categoryName', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
@@ -45,6 +49,8 @@ import { LikeComponent } from './like/like.component';
     ShippingComponent,
     CategoryComponent,
     LikeComponent,
+    AboutComponent,
+    HomeComponent,
   ],
   bootstrap: [
     AppComponent
