@@ -1,0 +1,28 @@
+img{
+  width: 1320px;
+  height:600px;
+  overflow: hidden;
+}
+.img-wrap {
+  position: relative;
+}
+
+.img-wrap h1 {
+  position: absolute;
+  left: 440px;
+  bottom: 340px;
+  width: 100%;
+  font-size: 50px;
+  text-decoration: underline;
+  color: black;
+}
+.img-wrap h2 {
+  position: absolute;
+  left: 290px;
+  bottom: 100px;
+  width: 100%;
+  font-size: 50px;
+  text-decoration: underline;
+  color: black;
+}
+

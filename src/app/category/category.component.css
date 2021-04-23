@@ -1,0 +1,59 @@
+
+.category-comp {
+  width: 1320px;
+  height:550px;
+  position: fixed;
+}
+
+.label {
+  position: absolute;
+  left: 300px;
+  bottom: 200px;
+  width: 100%;
+  font-size: 90px;
+  text-decoration: underline;
+  color: black;
+}
+
+.categories-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.categories {
+  min-width: 300px;
+  min-height: 300px;
+  width: calc(33.3% - 20px);
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  border-color: #000;
+  border-style: solid;
+  border-width: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: 0.3s;
+  font-size: 24px;
+  overflow: hidden;
+}
+
+.categories:hover {
+  border-width: 10px;
+  background: #e0e0e0;
+}
+a {
+  color: #000;
+}
+a:hover {
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+}
+

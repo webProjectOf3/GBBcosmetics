@@ -1,0 +1,38 @@
+h1 {
+  font-family: "Felix Titling", cursive;
+  font-size: 70px;
+  margin-bottom: 400px;
+  margin-left: 330px;
+  text-align: center;
+}
+.awka {
+  color: black;
+  font-family: "Felix Titling";
+}
+#devizSlova {
+  font-size: 30px;
+  font-family: "Felix Titling";
+  padding: 20px;
+}
+.img-wrap {
+  position: relative;
+  margin-bottom: 150px;
+}
+.img-wrap h1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.card-deck {
+  padding: 15px;
+}
+.rofl-banner {
+  margin-top: 45px;
+
+}
+.card-title{
+  font-family: "Felix Titling";
+  font-size: 20px;
+}
