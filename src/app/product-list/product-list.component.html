@@ -1,28 +1,38 @@
-<h2>Products</h2>
+<div >
+  <img src="https://seenthemagazine.com/wp-content/uploads/iStock-1043292584.jpg" style="width:1290px; height: 500px">
+  <h2>Products</h2>
+</div>
 
 <div *ngFor="let product of products">
   <h3>
-    <a [title]="product.name + ' details'" [routerLink]=" ['/products', product.id]">
+    <a class="prproducts" [title]="product.name + ' details'" [routerLink]=" ['/products', product.id]">
       <img src={{product.img}} width=600>
       {{ product.name }}
+      <p class="d" *ngIf="product.description">
+        Description: {{ product.description }}
+      </p>
     </a>
+    <p class="r" *ngIf="product.rating">
+      rating: {{product.rating}}
+    </p>
   </h3>
-  <p *ngIf="product.rating">
-    rating: {{product.rating}}
-  </p>
-
-  <h4 [href]='"https://telegram.me/share/url?url=" + product.link ' target="_blank">
-    <button>
+  <a class ="shr" [href] =' "https://telegram.me/share/url?url=" + product.link ' target="_blank">
+    <button style="font-size: 20px">
       Share
     </button>
-  </h4>
+  </a>
 
   <app-product-alerts
     [product]="product"
     (notify)="onNotify()">
   </app-product-alerts>
-  <button (click) = "remove(product.id)" style="background-color: rgb(253, 0, 127); margin: 10px">Remove</button>
+  <a class="shr">
+    <button (click) = "remove(product.id)" style="background-color: black; margin: 10px; font-size: 20px">
+      Remove
+    </button>
+  </a>
 </div>
+
 
 <!--
 Copyright Google LLC. All Rights Reserved.

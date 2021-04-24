@@ -2,16 +2,15 @@
 
 <div *ngIf="product">
   <div>
-    <a class="newImg" href={{product.gal1}}><img src={{product.gal1}}> </a>
-  <!--    <a class="gallery" href={{product.gal2}}><img src={{product.gal2}} width=70> </a>-->
-  <!--    <a class="gallery" href={{product.gal3}}><img src={{product.gal3}} width=70> </a>-->
+    <a class="newImg" href={{img}}></a>
+        <a class="gallery" href={{product.gal1}}><img src={{product.gal1}} width=200> </a>
+        <a class="gallery" href={{product.gal2}}><img src={{product.gal2}} width=200> </a>
+        <a class="gallery" href={{product.gal3}}><img src={{product.gal3}} width=200> </a>
   </div>
   <div class="description alert alert-success">
     <h3>{{ product.name }}</h3>
     <h4>{{ product.price | currency }}</h4>
-    <p>{{ product.description }}</p>
   </div>
-
-  <button (click)="addToCart(product)">Buy</button>
+  <button style="font-size: 30px; margin-left: 450px" (click)="addToCart(product)">Buy</button>
 </div>
-<like-box></like-box>
+

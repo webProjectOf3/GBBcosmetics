@@ -1,0 +1,35 @@
+h3{
+  font-size: 30px;
+  margin-left:550px;
+  margin-top: 50px;
+}
+p{
+  font-size: 20px;
+  margin-left:560px;
+}
+.n{
+  margin-left:540px;
+}
+.adrs{
+  margin-left:540px;
+}
+.button{
+  margin-left:590px;
+}
+.img1{
+  transform: translateY(-60%);
+  position: relative;
+  margin-top: calc(33.3% - 300px);
+}
+.img2{
+  display: flex;
+  position: relative;
+  transform: translateX(500%);
+  transform: translateY(-100%);
+  margin-left:890px;
+  margin-top: calc(33.3% - 400px);
+}
+.cart-item{
+  margin-left:430px;
+  margin-top: 50px;
+}

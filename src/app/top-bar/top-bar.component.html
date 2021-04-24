@@ -4,8 +4,10 @@
   </a>
   <a [routerLink]="['/categories']">Categories</a>
   <a routerLink="/about" > About Us</a>
-  <a routerLink="/about" > Contact</a>
-
+  <a routerLink="/contact" > Contact</a>
+  <a routerLink="/auth">
+    {{ user.valueOf() }}
+  </a>
   <a routerLink="/cart">
   <i class="material-icons">shopping_cart</i>
 </a>
