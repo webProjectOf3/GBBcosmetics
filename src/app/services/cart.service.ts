@@ -2,10 +2,16 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
+import {Observable} from 'rxjs';
+
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+  BASE_URl = 'http://127.0.0.1:8000/';
+
   items = [];
 
   constructor(
@@ -28,6 +34,6 @@ export class CartService {
   getShippingPrices() {
     return this.http.get('/assets/shipping.json');
   }
-  
+
 
 }
