@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {users} from '../users';
 import {Router} from '@angular/router';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-authorization',
@@ -13,22 +14,19 @@ export class AuthorizationComponent implements OnInit {
   password = '';
   logged = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void{}
 
-  auth(): void {
-    if (this.username !== '' && this.password !== '') {
-        if (users.some(e => e.username === this.username) && users.some(e => e.password === this.password)) {
-          this.logged = true;
-          this.router.navigate(['/']);
-          window.alert('Access');
-        }
-        else{
-          window.alert('Incorrect password');
-        }
+  auth(username , password): void {
+    if (this.authService.login(username , password)) {
+        window.alert('Access');
+    }
+    else{
+      window.alert('Incorrect password');
+    }
 
-  }}
+  }
 
   /*logout(){
       this.logged = false;

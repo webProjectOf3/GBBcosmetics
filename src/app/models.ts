@@ -9,11 +9,16 @@ export interface UserProfile{
     mood: string;
 }
 export interface User{
-    id: number;
     username: string;
     password: string;
-    email: string;
 }
+
+export interface CartItem{
+  product: number;
+  quantity: number;
+}
+
+
 export interface Product{
     id: number;
     name: string;

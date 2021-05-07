@@ -8,19 +8,11 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CategoryService {
-  BASE_URL = 'http://127.0.0.1:8000/';
+  // tslint:disable-next-line:variable-name
+  base_url = 'http://127.0.0.1:8000/api/categories/';
 
   constructor(private http: HttpClient) { }
-
-  getCategories(): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/api/categories/`);
-  }
-
-  getCategory(id: number): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/api/categories/${id}/`);
-  }
-
-  getPostsOfCategory(id: number): Observable<any> {
-    return this.http.get(`${this.BASE_URL}/api/categories/${id}/products`);
+  getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>(this.base_url) ;
   }
 }

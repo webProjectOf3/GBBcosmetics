@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { products } from '../products';
+import {ProductService} from './../services/product.service';
+import {Product} from './../models';
 
 
 @Component({
@@ -11,27 +13,52 @@ import { products } from '../products';
 })
 export class ProductListComponent implements OnInit {
 
-  products = products;
+  products: Product[];
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private productService: ProductService
   ) { }
 
-  share() {
+  share(): void {
     window.alert('The product has been shared!');
   }
-  onNotify() {
+  onNotify(): void {
     window.alert('You will be notified when the product goes on sale');
   }
-  remove(index: number){
+  remove(index: number): void{
     products.splice(index - 1, 1);
   }
 
 
-  ngOnInit(){
-    const routeParams = this.route.snapshot.paramMap;
-    const categoryNameFromRoute = Number(routeParams.get('categoryName'));
-    this.products = products.filter(i => i.category === categoryNameFromRoute);
+  ngOnInit(): void{
+    this.getProducts();
   }
+
+  getProducts(): void{
+    const id = +this.route.snapshot.paramMap.get('categoryId');
+    const a = this.productService.getProducts(id);
+    a.subscribe( res => {this.products = res; });
+  }
+
+
+  // getCategory() {
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.categoryDetailedService.getCategory(id).subscribe(category => {
+  //     this.category = category;
+  //     console.log(this.category);
+  //     });
+  // }
+// Number(routeParams.get('categoryId'))
+
+  // ngOnInit(): void {
+  //   this.getCategories();
+  // }
+  //
+  //
+  // getCategories(): void{
+  //   const a = this.categoryService.getCategories();
+  //   a.subscribe( res => {this.categories = res;});
+  // }
 }
 
 
